@@ -55,7 +55,19 @@ function validateUserLoginCredentials() {
   return JoiUserCredentialsSchema;
 }
 
+function validateUserRegisterDetails() {
+  const JoiRegisterUserSchema = Joi.object({
+    Name: Joi.string().min(5).max(50).required(),
+    username: Joi.string().min(16).max(16).required(),
+    password: Joi.string().min(8).max(50).required(),
+    email: Joi.string().required(),
+  });
+
+  return JoiRegisterUserSchema;
+}
+
 module.exports = {
   User: User,
   validateUserLoginCredentials: validateUserLoginCredentials,
+  validateUserRegisterDetails: validateUserRegisterDetails,
 };
