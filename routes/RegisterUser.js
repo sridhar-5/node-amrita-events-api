@@ -2,6 +2,7 @@ const Express = require("express");
 const router = Express.Router();
 const { User, validateUserRegisterDetails } = require("../models/Users");
 const bcrypt = require("bcrypt");
+const mongoose = require("mongoose");
 
 router.post("/", async (request, response) => {
   // validating the user's request body
@@ -28,7 +29,14 @@ router.post("/", async (request, response) => {
   });
 
   //encrypting the user password before saving to the database
-  const salt = "hghj";
+  const salt = await bcrypt.genSalt(10);
+  const HashedPassword = await bcrypt.hash(CreateUserInstance.password, salt);
+
+  // reassigning the hashed password in the place of the password
+  CreateUserInstance.password = HashedPassword;
+  const UserRegistered = await CreateUserInstance.save();
+
+  response.status(200).send("Regitration Successful. Please Login");
 });
 
 module.exports = router;
