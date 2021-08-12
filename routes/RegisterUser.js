@@ -28,7 +28,7 @@ router.post("/", async (request, response) => {
   });
 
   //encrypting the user password before saving to the database
-  const salt = 
+  const salt = "hghj";
 });
 
 module.exports = router;
