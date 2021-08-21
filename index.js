@@ -12,7 +12,7 @@ DBConnection();
 
 //routes
 app.use("/api/login", LoginUser);
-app.use("api/register", RegisterUser);
+app.use("/api/register", RegisterUser);
 
 app.get("/", (request, response) => {
   response.send("Welcome to the AmritaEvents Api HomePage");
