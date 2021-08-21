@@ -4,13 +4,13 @@ Backend Rest API for Amrita Events Android App
 
 ## End-point: Welcome
 
-### Description: ## Welcome Page of Amrita Events Api. Never Used. (For Testing Purposes)
+### Description: 
+## Welcome Page of Amrita Events Api. Never Used. (For Testing Purposes)
 
-## Endpoint: `/`
+### Endpoint: `/`
 
-## Method: `GET`
+### Method: `GET`
 
-Method: GET
 
 > ```
 > https://amrita-events.herokuapp.com/
@@ -20,11 +20,12 @@ Method: GET
 
 ## End-point: Login
 
-### Description: ## Endpoint: `/api/login`
+### Description: 
+### Endpoint: `/api/login`
 
-## Method: `POST`
+### Method: `POST`
 
-## Body (JSON):
+### Body (JSON):
 
 ```
 {
@@ -33,7 +34,6 @@ Method: GET
 }
 ```
 
-Method: POST
 
 > ```
 > https://amrita-events.herokuapp.com/api/login
@@ -60,11 +60,13 @@ Method: POST
 
 ## End-point: RegisterUser
 
-### Description: ## EndPoint: `/api/register`
+### Description: 
 
-## Method : `POST`
+### EndPoint: `/api/register`
 
-## Body: (JSON Only)
+### Method : `POST`
+
+### Body: (JSON Only)
 
 ```
 {
@@ -75,6 +77,10 @@ Method: POST
 }
 ```
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 23d0233b73442c0655e6bbbc532126942a3fb569
 > ```
 > https://amrita-events.herokuapp.com/api/register
 > ```
