@@ -4,11 +4,12 @@ const mongoose = require("mongoose");
 async function ConnectDatabase() {
   const DatabaseConnection = await mongoose.connect(
     //returns Promise
-    "mondogb://localhost:27017/AmritaEventsApi",
+    `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_USER_PASSWORD}@amritaevents.j3vp7.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
-      useFindAndModify: true,
+      useFindAndModify: false,
       useUnifiedTopology: true,
+      useCreateIndex: true,
     }
   );
 
