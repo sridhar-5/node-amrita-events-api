@@ -7,9 +7,9 @@ Backend Rest API for Amrita Events Android App
 ### Description: 
 ## Welcome Page of Amrita Events Api. Never Used. (For Testing Purposes)
 
-## Endpoint: `/`
+### Endpoint: `/`
 
-## Method: `GET`
+### Method: `GET`
 
 
 > ```
@@ -21,11 +21,11 @@ Backend Rest API for Amrita Events Android App
 ## End-point: Login
 
 ### Description: 
-## Endpoint: `/api/login`
+### Endpoint: `/api/login`
 
-## Method: `POST`
+### Method: `POST`
 
-## Body (JSON):
+### Body (JSON):
 
 ```
 {
@@ -54,11 +54,11 @@ Backend Rest API for Amrita Events Android App
 
 ### Description: 
 
-## EndPoint: `/api/register`
+### EndPoint: `/api/register`
 
-## Method : `POST`
+### Method : `POST`
 
-## Body: (JSON Only)
+### Body: (JSON Only)
 
 ```
 {
