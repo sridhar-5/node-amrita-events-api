@@ -28,8 +28,8 @@ Method: GET
 
 ```
 {
-"username" : "<your-username-here>",
-"password" : "<your-password-here>"
+    "username" : "<your-username-here>",
+    "password" : "<your-password-here>"
 }
 ```
 
@@ -46,6 +46,14 @@ Method: POST
   "username": "Justtotest",
   "password": "justtotest"
 }
+```
+
+### Postman tests performed:
+
+```
+    pm.test("Checking Login endpoint status code", function(){
+        pm.response.to.have.status(200);
+    });
 ```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
@@ -67,8 +75,6 @@ Method: POST
 }
 ```
 
-Method: POST
-
 > ```
 > https://amrita-events.herokuapp.com/api/register
 > ```
@@ -82,6 +88,14 @@ Method: POST
   "username": "justtotest",
   "password": "justtotest"
 }
+```
+
+### Postman tests performed:
+
+```
+    pm.test("Checking Register endpoint status code", function(){
+        pm.response.to.have.status(200);
+    });
 ```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
