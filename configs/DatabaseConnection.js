@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 //Connecting the Database
-async function ConnectDatabase() {
-  const DatabaseConnection = await mongoose.connect(
+function ConnectDatabase() {
+  var DatabaseConnection = mongoose.connect(
     //returns Promise
     `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_USER_PASSWORD}@amritaevents.j3vp7.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`,
     {
