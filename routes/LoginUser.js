@@ -21,7 +21,7 @@ router.post("/", async (request, response) => {
 
   //check if entered password and user password is same
   const PasswordCheck = await bcrypt.compare(
-    request.body.PasswordCheck,
+    request.body.password,
     CheckUser.password
   );
   //wrong password case

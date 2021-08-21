@@ -21,7 +21,7 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
     minlength: 8,
-    maxlength: 50,
+    maxlength: 250,
   },
   email: {
     type: String,
@@ -41,6 +41,7 @@ UserSchema.methods.GenerateJwtToken = function () {
     { _id: this._id, username: this.username },
     process.env.JWT_SECRET_KEY
   );
+  return token;
 };
 //creating a model for mongo Schema
 const User = mongoose.model("User", UserSchema);
