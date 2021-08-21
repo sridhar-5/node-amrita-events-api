@@ -23,9 +23,9 @@ router.post("/", async (request, response) => {
 
   const CreateUserInstance = new User({
     Name: request.body.Name,
-    username: request.bosy.username,
-    password: request.body.password,
     email: request.body.email,
+    username: request.body.username,
+    password: request.body.password,
   });
 
   //encrypting the user password before saving to the database
