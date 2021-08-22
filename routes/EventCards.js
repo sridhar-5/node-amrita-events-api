@@ -4,13 +4,20 @@ const _ = require("loadash");
 const router = Express.Router();
 //importing middle ware
 const AuthenticateUser = require("./middleware/AuthenticateUser");
+const AuthenticateAdminUser = require("../middleware/AuthenticateAdminUser");
 
-router.get("/", AuthenticateUser, async (request, response) => {
-  const AllActiveEvents = await Events.find();
-  response
-    .status(200)
-    .send(_.pick(AllActiveEvents, ["_id", "Title", "OrganizingClub", "Date"]));
-});
+router.get(
+  "/",
+  [AuthenticateUser, AuthenticateAdminUser],
+  async (request, response) => {
+    const AllActiveEvents = await Events.find();
+    response
+      .status(200)
+      .send(
+        _.pick(AllActiveEvents, ["_id", "Title", "OrganizingClub", "Date"])
+      );
+  }
+);
 
 //when clicked call this end point using the event id
 router.get("/:SelectedEventId", AuthenticateUser, async (request, response) => {

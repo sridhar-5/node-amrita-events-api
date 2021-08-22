@@ -13,5 +13,5 @@ module.exports = async function (request, response, next) {
       .status(403)
       .send("You are not allowed to do this operation..Contact Admins");
   }
-  next();
+  response.redirect("/api/admin-users-portal");
 };
