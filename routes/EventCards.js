@@ -29,5 +29,5 @@ router.get("/:SelectedEventId", AuthenticateUser, async (request, response) => {
     response.status(400).send("Sorry..! Bad Request");
   }
   // if event exists then render the specific event details and send 200 status code
-  response.status(200).send(AllActiveEvents);
+  response.status(200).send(SelectedEventDetails);
 });

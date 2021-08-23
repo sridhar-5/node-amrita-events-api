@@ -9,9 +9,8 @@ module.exports = async function (request, response, next) {
 
   //if user is not the admin respond with status - 403 -user restrictions
   if (!CheckUsersIsAdmin) {
-    return response
-      .status(403)
-      .send("You are not allowed to do this operation..Contact Admins");
+    //if the user is not an admin then rendering back the client side views
+    next();
   }
   response.redirect("/api/admin-users-portal");
 };
