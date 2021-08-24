@@ -6,7 +6,7 @@ Backend Rest API for Amrita Events Android App
 
 ### Description:
 
-## Welcome Page of Amrita Events Api. Never Used. (For Testing Purposes)
+### Welcome Page of Amrita Events Api. Never Used. (For Testing Purposes)
 
 ### Endpoint: `/`
 
@@ -102,7 +102,7 @@ Backend Rest API for Amrita Events Android App
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: AllEvents
+## End-point-name: AllEvents
 
 ## Endpoint: `/api/all-events`
 
@@ -146,7 +146,7 @@ Backend Rest API for Amrita Events Android App
 
 ## Method: `GET`
 
-### Usage : 
+## Usage : 
 `if the user is authenticated and is an admin then this endpoint responds with the list of all the events in the database`
 
 ## Note: 
@@ -166,7 +166,8 @@ Backend Rest API for Amrita Events Android App
 
 ## Method: `POST`
 
-## Usage: `If the user is an authenticated Admin and all the validation on that request's body satisfy then this endpoint responds with "Event Created Successfully..! Message`
+## Usage:
+`If the user is an authenticated Admin and all the validation on that request's body satisfy then this endpoint responds with "Event Created Successfully..! Message`
 
 ## Body (JSON format) :
 
