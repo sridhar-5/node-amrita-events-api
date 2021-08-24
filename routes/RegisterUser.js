@@ -34,6 +34,8 @@ router.post("/", async (request, response) => {
 
   // reassigning the hashed password in the place of the password
   CreateUserInstance.password = HashedPassword;
+
+  //save into the database
   const UserRegistered = await CreateUserInstance.save();
 
   response.status(200).send("Regitration Successful. Please Login");

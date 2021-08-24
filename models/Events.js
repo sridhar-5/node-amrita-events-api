@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
-
+const Contacts = require("../models/ContactDetails");
 const EventSchema = mongoose.Schema({
   ImageUrl: {
     type: String,
@@ -31,7 +31,7 @@ const EventSchema = mongoose.Schema({
     required: true,
   },
   Date: {
-    type: String,
+    type: Date,
     minlength: 5,
     maxlength: 9,
     required: true,
@@ -47,25 +47,17 @@ const EventSchema = mongoose.Schema({
     minlength: 5,
     required: true,
   },
-  Note: {},
-  ContactDetails: {
-    type: [String],
-    /*
-      type : [{
-      type: Schema.type.ObjectId
-      }]
-      */
-    required: true,
-    validate: [
-      contactArrayCheck,
-      "Contact field should conatain more than zero people",
-    ],
+  Note: {
+    type: String,
   },
+  ContactDetails: {
+    type: [Contacts],
+  },
+  // Status: {
+  //   type: String,
+  //   enum: ["Completed", "Upcoming", "Ongoing"],
+  // },
 });
-
-function contactArrayCheck(val) {
-  return val.length > 0;
-}
 
 //creating a model for this mongo schema
 const Events = mongoose.model("Event", EventSchema);
