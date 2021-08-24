@@ -108,9 +108,11 @@ Backend Rest API for Amrita Events Android App
 
 ## Method: `GET`
 
-## Usage: `if the user is authenticated then this endpoint responds with list of all the events with sufficient information for the card view`
+## Usage: 
+`if the user is authenticated then this endpoint responds with list of all the events with sufficient information for the card view`
 
-### Note: `This Endpoint is only for Non-admin Authenticated Users.`
+### Note: 
+`This Endpoint is only for Non-admin Authenticated Users.`
 
 
 > ```
@@ -125,9 +127,11 @@ Backend Rest API for Amrita Events Android App
 
 ## Method: `GET`
 
-## Usage: `if the user is authenticated then this endpoint responds with the completed details of the event corresponding to the id given in the request parameters`
+## Usage: 
+`if the user is authenticated then this endpoint responds with the completed details of the event corresponding to the id given in the request parameters`
 
-### Note: `This endpoint is only for the Non-Admin authenticated users`
+### Note: 
+`This endpoint is only for the Non-Admin authenticated users`
 
 
 > ```
@@ -142,9 +146,11 @@ Backend Rest API for Amrita Events Android App
 
 ## Method: `GET`
 
-### Usage : `if the user is authenticated and is an admin then this endpoint responds with the list of all the events in the database`
+### Usage : 
+`if the user is authenticated and is an admin then this endpoint responds with the list of all the events in the database`
 
-## Note: `This endpoint is only for Authenticated Admin Users`
+## Note: 
+`This endpoint is only for Authenticated Admin Users`
 
 
 > ```
@@ -202,7 +208,8 @@ Backend Rest API for Amrita Events Android App
 }
 ```
 
-### Note: `This Endpoint is only for the Authenticated Admin Users.`
+### Note: 
+`This Endpoint is only for the Authenticated Admin Users.`
 
 
 > ```
@@ -223,7 +230,8 @@ Backend Rest API for Amrita Events Android App
 ## Usage: 
 `If the user is an authenticated Admin and the id of the evnt is given in the database then this endpoint successfully deleted the event and responds with the deleted event object.`
 
-### Note: `This endpoint is only for the Authenticated Admin users `.
+### Note: 
+`This endpoint is only for the Authenticated Admin users `.
 
 
 > ```
