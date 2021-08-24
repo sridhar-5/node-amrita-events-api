@@ -1,10 +1,22 @@
 const Express = require("express");
 const router = Express.Router();
 const AuthenticateUser = require("./middleware/AuthenticateUser");
+const CheckAdminUser = require("../middleware/AuthAdminUser");
+const { Events } = require("../models/Events");
+const { response } = require("express");
 
-router.get("/", AuthenticateUser, (request, response) => {
-  //admin side
-});
+router.get(
+  "/",
+  [AuthenticateUser, CheckAdminUser],
+  async (request, response) => {
+    //get request is made return the list of all the events happening
+    const AllEvents = await Events.find();
+    return response.status(200).send(AllEvents);
+  }
+);
+
+router.post("/", [AuthenticateUser, CheckAdminUser], (request, response) => {});
+
 module.exports = {
   router,
 };

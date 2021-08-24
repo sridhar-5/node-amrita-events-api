@@ -31,7 +31,7 @@ router.post("/", async (request, response) => {
   //if both entered username and password are correct then generating a jwt token
 
   const token = CheckUser.GenerateJwtToken();
-  response.status(200).send(token);
+  response.header("user-auth-token", token).status(200).send(token);
 });
 
 module.exports = router;

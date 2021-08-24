@@ -4,11 +4,11 @@ const _ = require("loadash");
 const router = Express.Router();
 //importing middle ware
 const AuthenticateUser = require("./middleware/AuthenticateUser");
-const AuthenticateAdminUser = require("../middleware/AuthenticateAdminUser");
+const RedirectAdminUser = require("../middleware/RedirectAdminUser");
 
 router.get(
   "/",
-  [AuthenticateUser, AuthenticateAdminUser],
+  [AuthenticateUser, RedirectAdminUser],
   async (request, response) => {
     const AllActiveEvents = await Events.find();
     response
