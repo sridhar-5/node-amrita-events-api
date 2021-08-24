@@ -104,7 +104,7 @@ Backend Rest API for Amrita Events Android App
 
 ## End-point: AllEvents
 
-### Description: ## Endpoint: `/api/all-events`
+## Endpoint: `/api/all-events`
 
 ## Method: `GET`
 
@@ -112,7 +112,6 @@ Backend Rest API for Amrita Events Android App
 
 ### Note: `This Endpoint is only for Non-admin Authenticated Users.`
 
-Method: GET
 
 > ```
 > https://amrita-events.herokuapp.com/api/all-events
@@ -120,9 +119,9 @@ Method: GET
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: ParticularEvent
+## End-point-name: ParticularEvent
 
-### Description: ## Endpoint: `/api/all-events/:selectedEvent`
+## Endpoint: `/api/all-events/:selectedEvent`
 
 ## Method: `GET`
 
@@ -130,7 +129,6 @@ Method: GET
 
 ### Note: `This endpoint is only for the Non-Admin authenticated users`
 
-Method: GET
 
 > ```
 > https://amrita-events.herokuapp.com/api/all-events/6125250abb7921a16d0b6ae7
@@ -138,9 +136,9 @@ Method: GET
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: AllEventsAdminUsers
+## End-point-name: AllEventsAdminUsers
 
-### Description: ## Endpoint: `/api/admin-users-portal`
+## Endpoint: `/api/admin-users-portal`
 
 ## Method: `GET`
 
@@ -148,7 +146,6 @@ Method: GET
 
 ## Note: `This endpoint is only for Authenticated Admin Users`
 
-Method: GET
 
 > ```
 > https://amrita-events.herokuapp.com/api/admin-users-portal
@@ -156,9 +153,10 @@ Method: GET
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: AddEventForAdmins
+## End-point-name: AddEventForAdmins
 
-### Description: ## Endpoint: `/api/admin-users-portal`
+
+## Endpoint: `/api/admin-users-portal`
 
 ## Method: `POST`
 
@@ -206,7 +204,6 @@ Method: GET
 
 ### Note: `This Endpoint is only for the Authenticated Admin Users.`
 
-Method: POST
 
 > ```
 > https://amrita-events.herokuapp.com/api/admin-users-portal
@@ -214,19 +211,20 @@ Method: POST
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: DeleteEventOnlyForAdmins
+## End-point-name: DeleteEventOnlyForAdmins
 
-### Description: ## Endpoint: `/api/admin-users-portal/:eventId`
+
+## Endpoint: `/api/admin-users-portal/:eventId`
 
 ## Method: `DELETE`
 
 ## Params: `EventId`
 
-## Usage: `If the user is an authenticated Admin and the id of the evnt is given in the database then this endpoint successfully deleted the event and responds with the deleted event object.`
+## Usage: 
+`If the user is an authenticated Admin and the id of the evnt is given in the database then this endpoint successfully deleted the event and responds with the deleted event object.`
 
 ### Note: `This endpoint is only for the Authenticated Admin users `.
 
-Method: DELETE
 
 > ```
 > https://amrita-events.herokuapp.com/api/admin-users-portal/6125250abb7921a16d0b6ae7
