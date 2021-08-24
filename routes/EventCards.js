@@ -10,12 +10,17 @@ router.get(
   "/",
   [AuthenticateUser, RedirectAdminUser],
   async (request, response) => {
-    const AllActiveEvents = await Events.find();
-    response
-      .status(200)
-      .send(
-        _.pick(AllActiveEvents, ["_id", "Title", "OrganizingClub", "Date"])
+    const AllActiveEvents = await Events.find({});
+    //for debugging purposes
+    console.log(AllActiveEvents);
+    var cardViewOutput = [];
+    AllActiveEvents.forEach((event) => {
+      cardViewOutput.push(
+        _.pick(event, ["_id", "Title", "OrganizingClub", "Date"])
       );
+    });
+    console.log(cardViewOutput);
+    response.status(200).send(cardViewOutput);
   }
 );
 

@@ -6,11 +6,16 @@ module.exports = async function (request, response, next) {
   const CheckUsersIsAdmin = await User.findOne({
     username: request.user.username,
   });
+  //for debuggling purpose
+  console.log(CheckUsersIsAdmin);
 
-  //if user is not the admin respond with status - 403 -user restrictions
   if (!CheckUsersIsAdmin.isAdmin) {
+    console.log("listing events");
     //if the user is not an admin then rendering back the client side views
     next();
+  } else {
+    //debugging purposes
+    //console.log("only for admins");
+    response.redirect("/api/admin-users-portal");
   }
-  response.redirect("/api/admin-users-portal");
 };
