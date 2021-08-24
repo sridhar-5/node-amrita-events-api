@@ -8,7 +8,6 @@ const Contacts = mongoose.Schema({
     type: String,
   },
 });
-
 module.exports = {
   Contacts,
 };

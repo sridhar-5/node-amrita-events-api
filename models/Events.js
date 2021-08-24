@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
-const Contacts = require("../models/ContactDetails");
+const { Contacts } = require("../models/ContactDetails");
 const EventSchema = mongoose.Schema({
   ImageUrl: {
     type: String,

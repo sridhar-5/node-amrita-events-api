@@ -1,6 +1,6 @@
 const Express = require("express");
 const router = Express.Router();
-const AuthenticateUser = require("./middleware/AuthenticateUser");
+const AuthenticateUser = require("../middleware/AuthenticateUser");
 const CheckAdminUser = require("../middleware/AuthAdminUser");
 const { Events } = require("../models/Events");
 
@@ -14,26 +14,32 @@ router.get(
   }
 );
 
-//if admins are allowed to make post requests then new events can be added
-router.post("/", [AuthenticateUser, CheckAdminUser], (request, response) => {
-  const event = new Events({
-    ImageUrl: request.body.ImageUrl,
-    Title: request.body.Title,
-    Caption: request.body.Caption,
-    Description: request.body.Description,
-    OrganizingClub: request.body.OrganizingClub,
-    Date: request.body.Date,
-    Venue: request.body.Venue,
-    RegistrationLink: request.body.RegistrationLink,
-    Note: request.body.Note,
-    ContactDetails: request.body.ContactDetails,
-  });
+//admins are allowed to make post requests then new events can be added
+router.post(
+  "/",
+  [AuthenticateUser, CheckAdminUser],
+  async (request, response) => {
+    const event = new Events({
+      ImageUrl: request.body.ImageUrl,
+      Title: request.body.Title,
+      Caption: request.body.Caption,
+      Description: request.body.Description,
+      OrganizingClub: request.body.OrganizingClub,
+      Date: request.body.Date,
+      Venue: request.body.Venue,
+      RegistrationLink: request.body.RegistrationLink,
+      Note: request.body.Note,
+      ContactDetails: request.body.ContactDetails,
+    });
 
-  const StatusSave = await event.save();
-  response.status(200).send("Event Successfully Created...!");
-});
+    const StatusSave = await event.save();
+    //debugging purposes
+    //console.log(event);
+    response.status(200).send("Event Successfully Created...!");
+  }
+);
+
 // Delete requests
-
 router.delete(
   "/:DeleteEventId",
   [AuthenticateUser, CheckAdminUser],
@@ -48,9 +54,4 @@ router.delete(
     response.status(200).send(DeleteEvent);
   }
 );
-module.exports = {
-  router,
-};
-
-//Note: Once if the user is in this module it means that he is already a super user or admin so
-//it is good enough to just check if the user is logged in for every sub end point here after.
+module.exports = router;

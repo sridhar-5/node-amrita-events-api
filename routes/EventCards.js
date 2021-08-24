@@ -1,9 +1,9 @@
 const { Events } = require("../models/Events");
 const Express = require("express");
-const _ = require("loadash");
+const _ = require("lodash");
 const router = Express.Router();
 //importing middle ware
-const AuthenticateUser = require("./middleware/AuthenticateUser");
+const AuthenticateUser = require("../middleware/AuthenticateUser");
 const RedirectAdminUser = require("../middleware/RedirectAdminUser");
 
 router.get(
@@ -31,3 +31,5 @@ router.get("/:SelectedEventId", AuthenticateUser, async (request, response) => {
   // if event exists then render the specific event details and send 200 status code
   response.status(200).send(SelectedEventDetails);
 });
+
+module.exports = router;

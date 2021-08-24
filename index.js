@@ -6,6 +6,7 @@ const DBConnection = require("./configs/DatabaseConnection");
 const LoginUser = require("./routes/LoginUser");
 const RegisterUser = require("./routes/RegisterUser");
 const AdminUsersEndpoint = require("./routes/AdminUsersEndpoint");
+const allEvent = require("./routes/EventCards");
 const app = Express();
 
 app.use(Express.json());
@@ -16,7 +17,7 @@ DBConnection();
 //routes
 app.use("/api/login", LoginUser);
 app.use("/api/register", RegisterUser);
-app.use("/api/allevents", EventCards);
+app.use("/api/all-events", allEvent);
 app.use("/api/admin-users-portal", AdminUsersEndpoint);
 
 //Homepage Endpoint
