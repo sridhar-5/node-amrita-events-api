@@ -8,7 +8,7 @@ module.exports = async function (request, response, next) {
   });
 
   //if user is not the admin respond with status - 403 -user restrictions
-  if (!CheckUsersIsAdmin) {
+  if (CheckUsersIsAdmin.isAdmin) {
     //if the user is not an admin then rendering back the client side views
     next();
   }
