@@ -10,7 +10,6 @@ module.exports = async function (request, response, next) {
   console.log(CheckUsersIsAdmin);
 
   if (!CheckUsersIsAdmin.isAdmin) {
-    console.log("listing events");
     //if the user is not an admin then rendering back the client side views
     next();
   } else {
