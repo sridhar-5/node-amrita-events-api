@@ -1,5 +1,6 @@
 const Express = require("express");
 const router = Express.Router();
+const _ = require("lodash");
 const AuthenticateUser = require("../middleware/AuthenticateUser");
 const CheckAdminUser = require("../middleware/AuthAdminUser");
 const { Events } = require("../models/Events");
@@ -9,8 +10,30 @@ router.get(
   [AuthenticateUser, CheckAdminUser],
   async (request, response) => {
     //get request is made return the list of all the events happening
-    const AllEvents = await Events.find();
-    return response.status(200).send(AllEvents);
+    const AllEvents = await Events.find({});
+    var SelectedAttributedForCardView = [];
+    AllEvents.forEach((event) => {
+      SelectedAttributedForCardView.push(
+        _.pick(event, ["_id", "ImageUrl", "Title", "OrganizingClub", "Date"])
+      );
+    });
+    return response.status(200).send(SelectedAttributedForCardView);
+  }
+);
+
+//expanded event details view admin side
+router.get(
+  "/:SelectedEventId",
+  [AuthenticateUser, CheckAdminUser],
+  async (request, response) => {
+    const SelectedEvent = await Events.find({
+      _id: request.params.SelectedEventId,
+    });
+
+    if (!SelectedEvent) {
+      return response.status(400).send("Bad Request..!");
+    }
+    response.status(200).send(SelectedEvent);
   }
 );
 

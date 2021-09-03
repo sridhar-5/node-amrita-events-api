@@ -19,6 +19,7 @@ router.get(
         _.pick(event, ["_id", "Title", "OrganizingClub", "Date"])
       );
     });
+    //for debugging
     console.log(cardViewOutput);
     response.status(200).send(cardViewOutput);
   }
