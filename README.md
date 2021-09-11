@@ -1,4 +1,4 @@
-# Project: Amrita-Events-Api
+# Project: Amrita-Events-Api 
 
 Backend Rest API for Amrita Events Android App
 
@@ -106,7 +106,9 @@ Backend Rest API for Amrita Events Android App
 
 ## Endpoint: `/api/all-events`
 
-## Method: `GET`
+## Method: `GET` 
+
+End
 
 ## Usage: 
 `if the user is authenticated then this endpoint responds with list of all the events with sufficient information for the card view`
