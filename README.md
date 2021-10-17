@@ -2,7 +2,7 @@
 
 Backend Rest API for Amrita Events Android App
 
-## End-point: Welcome
+## End-point: Welcome..!
 
 ### Description:
 
