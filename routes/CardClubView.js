@@ -18,7 +18,7 @@ router.get("/", AuthenticateUser, async (request, response) => {
 });
 
 router.get(
-  "fetchEvents/:ClubName",
+  "/fetchEvents/:ClubName",
   AuthenticateUser,
   async (request, response) => {
     const ClubName = request.params.ClubName;
