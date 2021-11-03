@@ -1,6 +1,6 @@
 const { Events } = require("../models/Events");
 
-const { Club } = require("../models/Club");
+const { Club } = require("../models/club");
 
 const Express = require("express");
 const _ = require("lodash");
