@@ -16,7 +16,7 @@ router.get(
     var cardViewOutput = [];
     AllActiveEvents.forEach((event) => {
       cardViewOutput.push(
-        _.pick(event, ["_id", "Title", "OrganizingClub", "Date"])
+        _.pick(event, ["_id", "Title", "OrganizingClub", "Description", "Date"])
       );
     });
     //for debugging
