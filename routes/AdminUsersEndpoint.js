@@ -85,7 +85,7 @@ router.post(
   "/createClub",
   [AuthenticateUser, CheckAdminUser],
   async (request, response) => {
-    const Club = new Club({
+    const NewClub = new Club({
       ClubImageUrl: request.body.ClubImageUrl,
       ClubName: request.body.ClubName,
       ClubDescription: request.body.ClubDescription,
