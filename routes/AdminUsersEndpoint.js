@@ -4,6 +4,7 @@ const _ = require("lodash");
 const AuthenticateUser = require("../middleware/AuthenticateUser");
 const CheckAdminUser = require("../middleware/AuthAdminUser");
 const { Events } = require("../models/Events");
+const { Club, Club } = require("../models/club");
 
 router.get(
   "/",
@@ -77,4 +78,24 @@ router.delete(
     response.status(200).send(DeleteEvent);
   }
 );
+
+//creating a new club
+
+router.post(
+  "/createClub",
+  [AuthenticateUser, CheckAdminUser],
+  async (request, response) => {
+    const Club = new Club({
+      ClubImageUrl: request.body.ClubImageUrl,
+      ClubName: request.body.ClubName,
+      ClubDescription: request.body.ClubDescription,
+      InstaHandle: request.body.InstaHandle,
+    });
+
+    const StatusSave = await Club.save();
+
+    response.status(200).send(Club);
+  }
+);
+
 module.exports = router;
