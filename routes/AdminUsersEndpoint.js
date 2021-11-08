@@ -4,7 +4,7 @@ const _ = require("lodash");
 const AuthenticateUser = require("../middleware/AuthenticateUser");
 const CheckAdminUser = require("../middleware/AuthAdminUser");
 const { Events } = require("../models/Events");
-const { Club, Club } = require("../models/club");
+const { Club } = require("../models/club");
 
 router.get(
   "/",
