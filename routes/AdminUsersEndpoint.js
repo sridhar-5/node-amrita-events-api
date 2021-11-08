@@ -92,7 +92,7 @@ router.post(
       InstaHandle: request.body.InstaHandle,
     });
 
-    const StatusSave = await Club.save();
+    const StatusSave = await NewClub.save();
 
     response.status(200).send(Club);
   }
